@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:crud_apps/model/user.dart';
+import 'package:crud_apps/model/User.dart';
 
 class ViewUser extends StatefulWidget {
   final User user;
@@ -16,7 +16,7 @@ class _ViewUserState extends State<ViewUser> {
           title: const Text("SQLite CRUD"),
         ),
         body: Container(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,7 +40,7 @@ class _ViewUserState extends State<ViewUser> {
                   Padding(
                     padding: const EdgeInsets.only(left: 30),
                     child: Text(widget.user.name ?? '',
-                        style: const TextStyle(fontSize: 16)),
+                        style: TextStyle(fontSize: 16)),
                   ),
                 ],
               ),
@@ -57,7 +57,7 @@ class _ViewUserState extends State<ViewUser> {
                   Padding(
                     padding: const EdgeInsets.only(left: 25),
                     child: Text(widget.user.contact ?? '',
-                        style: const TextStyle(fontSize: 16)),
+                        style: TextStyle(fontSize: 16)),
                   ),
                 ],
               ),
@@ -76,6 +76,24 @@ class _ViewUserState extends State<ViewUser> {
                     height: 20,
                   ),
                   Text(widget.user.description ?? '',
+                      style: const TextStyle(fontSize: 16)),
+                ],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Address',
+                      style: TextStyle(
+                          color: Colors.teal,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600)),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(widget.user.address ?? '',
                       style: const TextStyle(fontSize: 16)),
                 ],
               )
